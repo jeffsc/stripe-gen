@@ -1,0 +1,24 @@
+<head>
+  <title>Stripe Generator</title>
+</head>
+
+<body>
+    <h1>Stripe Generator for Knitting</h1>
+    {{> inputs}}
+    {{> stripeDisplay}}
+</body>
+
+<template name="inputs">
+    <input type="number" min="2" max="1000" step="1" value="100" class="count" />
+</template>
+
+<template name="stripeDisplay">
+<div class="stripes">
+    {{#each stripes}}
+    {{> stripe}}
+    {{/each}}
+</div>
+</template>
+<template name="stripe">
+    <div class="stripe" style="background-color:{{color}};height:{{height}}px;"></div>
+</template>
