@@ -1,7 +1,9 @@
+Annotate stripes
+- show sections (header, body, footer)
+- show numbers for each stripe
+All values integers
 Input string
-- stripes based on letters
 - constraints (min, max)
-Show numbers next to stripes
 Random stripes
 Color picker
 Styling & layout
