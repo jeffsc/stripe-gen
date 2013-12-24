@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Ember.js • Stripe Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <script type="text/x-handlebars" data-template-name="index">
+    {{partial "stripes"}}
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="inputs">
+
+    <div id="inputBlock">
+      <label for="blockHeight">Total Height:</label>
+      <input type="number" id="blockHeight" />
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="stripes">
+    {{#each}}
+    <div class="stripe" {{bindStyle height="height" height-unit="px" background-color="color"}}></div>
+    {{/each}}
+
+  </script>
+
+  <script src="js/libs/jquery-1.10.2.min.js"></script>
+  <script src="js/libs/handlebars-1.0.0.js"></script>
+  <script src="js/libs/ember.js"></script>
+  <script src="js/libs/ember-data.js"></script>
+  <script src="js/libs/bindstyle-ember-helper.js"></script>
+
+  <script src="js/application.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/models/stripe.js"></script>
+</body>
+</html>
