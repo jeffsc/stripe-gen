@@ -1,7 +1,43 @@
+#inputs .section {
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
+}
+#inputs label {
+  display: inline-block;
+  width: 8em;
+}
+
 #stripeDisplay {
-  margin: 0 auto;
+  border-top: 1px solid #333333;
+  margin-top: 3em;
+  padding-left: 5em;
   padding-top: 3em;
 }
+.stripeBox {
+  position: relative;
+}
+.annotationBlock {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 7em;
+}
+.title {
+  display: block;
+  font-weight: bold;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+.annotation {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+}
 .stripe {
+  height: 100%;
+  margin-left: 8em;
   width: 300px;
 }

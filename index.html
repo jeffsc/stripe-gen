@@ -6,7 +6,7 @@
   <body ng-controller="StripeGenController">
 
     <div id="inputs">
-      <div class="header">
+      <div class="header section">
         <div class="line">
           <h4>Top Margin</h4>
           <label for="headerHeight">Height:</label>
@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <div class="body">
+      <div class="body section">
         <h4>Body</h4>
         <div class="line">
           <label for="totalHeight">Height:</label>
@@ -43,7 +43,7 @@
         </div>
       </div>
 
-      <div class="footer">
+      <div class="footer section">
         <div class="line">
           <h4>Bottom Margin</h4>
           <label for="footerHeight">Height:</label>
@@ -58,8 +58,18 @@
     </div>
 
     <div id="stripeDisplay">
-      <div ng-repeat="stripe in (stripeParams | stripesGen).stripes" class="stripe"
-        style="background-color:#{{stripe.color}};height:{{stripe.height}}px;"></div>
+      <div ng-repeat="stripe in (stripeParams | stripesGen).stripes"
+        class="stripeBox" style="height:{{stripe.height}}px;">
+        <div class="stripe" style="background-color:#{{stripe.color}};"></div>
+        <div class="annotationBlock">
+          <span class="title">
+            {{stripe.header ? 'Header' : ''}}
+            {{stripe.footer ? 'Footer' : ''}}
+            {{stripe.firstBody ? 'Body' : ''}}
+          </span>
+          <span class="annotation">{{stripe.height}} rows</span>
+        </div>
+      </div>
     </div>
 
     <script src="http://code.angularjs.org/1.2.6/angular.js" type="text/javascript"></script>

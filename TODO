@@ -1,9 +1,4 @@
-Annotate stripes
-- show sections (header, body, footer)
-- show numbers for each stripe
-All values integers
-Input string
-- constraints (min, max)
+Total rows of each color
 Random stripes
 Color picker
 Styling & layout
