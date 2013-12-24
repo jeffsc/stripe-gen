@@ -1,0 +1,63 @@
+<!doctype html>
+<html ng-app="stripeGenApp">
+  <head>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body ng-controller="StripeGenController">
+
+    <div id="inputs">
+      <div class="header">
+        <div class="line">
+          <h4>Top Margin</h4>
+          <label for="headerHeight">Height:</label>
+          <input ng-model="stripeParams.header.height" id="headerHeight" />
+        </div>
+        <div class="line">
+          <label for="headerColor">Color:</label>
+          <input ng-model="stripeParams.header.color" id="headerColor" />
+        </div>
+      </div>
+
+      <div class="body">
+        <h4>Body</h4>
+        <div class="line">
+          <label for="totalHeight">Height:</label>
+          <input ng-model="stripeParams.height" id="totalHeight" />
+        </div>
+        <div class="line">
+          <label for="numStripes">Number of stripes:</label>
+          <input ng-model="stripeParams.count" id="numStripes" />
+        </div>
+        <div class="line">
+          <label for="numColors">Number of colors:</label>
+          <input ng-model="colorCount" id="numColors" />
+        </div>
+        <div class="line" ng-repeat="(i, color) in getColors(colorCount)">
+          <label for="color{{i}}">Color:</label>
+          <input ng-model="colors[i].color" id="color{{i}}" />
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="line">
+          <h4>Bottom Margin</h4>
+          <label for="footerHeight">Height:</label>
+          <input ng-model="stripeParams.footer.height" id="footerHeight" />
+        </div>
+        <div class="line">
+          <label for="footerColor">Color:</label>
+          <input ng-model="stripeParams.footer.color" id="footerColor" />
+        </div>
+      </div>
+
+    </div>
+
+    <div id="stripeDisplay">
+      <div ng-repeat="stripe in (stripeParams | stripesGen).stripes" class="stripe"
+        style="background-color:#{{stripe.color}};height:{{stripe.height}}px;"></div>
+    </div>
+
+    <script src="http://code.angularjs.org/1.2.6/angular.js" type="text/javascript"></script>
+    <script src="js/controllers.js" type="text/javascript"></script>
+  </body>
+</html>
