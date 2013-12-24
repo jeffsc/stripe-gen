@@ -10,9 +10,12 @@
 
 #stripeDisplay {
   border-top: 1px solid #333333;
+  display: inline-block;
   margin-top: 3em;
-  padding-left: 5em;
+  padding-left: 3%;
   padding-top: 3em;
+  vertical-align: top;
+  width: 70%;
 }
 .stripeBox {
   position: relative;
@@ -40,4 +43,29 @@
   height: 100%;
   margin-left: 8em;
   width: 300px;
+}
+
+#stats {
+  border-top: 1px solid #333333;
+  display: inline-block;
+  margin-top: 3em;
+  padding-top: 3em;
+  vertical-align: top;
+  width: 25%;
+}
+#stats .color {
+  margin-bottom: 0.25em;
+}
+#stats .swatch {
+  display: inline-block;
+  height: 1.5em;
+  vertical-align: bottom;
+  width: 1.5em;
+}
+#stats .total, #stats .color {
+  margin-left: 1em;
+}
+#stats .total {
+  font-weight: bold;
+  margin-top: 0.25em
 }

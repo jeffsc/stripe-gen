@@ -103,5 +103,18 @@ stripeGenApp.controller('StripeGenController', function($scope) {
       $scope.colors.push({});
     }
     return $scope.colors;
-  }
+  };
+
+  $scope.getColorSum = function(stripes, color) {
+    return _.reduce(stripes, function(memo, s) {
+      return angular.isUndefined(color) || s.color == color ?
+        memo + parseInt(s.height) : memo;
+    }, 0);
+  };
+
+  $scope.allColors = function() {
+    return _.uniq(_.compact(_.map($scope.colors, function(c) { return c.color; })
+          .concat([(($scope.stripeParams || {}).header || {}).color,
+            (($scope.stripeParams || {}).footer || {}).color]))).sort();
+  };
 });

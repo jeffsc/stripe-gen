@@ -60,7 +60,8 @@
     <div id="stripeDisplay">
       <div ng-repeat="stripe in (stripeParams | stripesGen).stripes"
         class="stripeBox" style="height:{{stripe.height}}px;">
-        <div class="stripe" style="background-color:#{{stripe.color}};"></div>
+        <div class="stripe" style="background-color:#{{stripe.color}};"
+          title="{{stripe.height}} rows, #{{stripe.color}}"></div>
         <div class="annotationBlock">
           <span class="title">
             {{stripe.header ? 'Header' : ''}}
@@ -70,6 +71,16 @@
           <span class="annotation">{{stripe.height}} rows</span>
         </div>
       </div>
+    </div>
+
+    <div id="stats">
+      <h3>Totals</h3>
+      <div class="color" ng-repeat="color in allColors()">
+        Rows for
+        <span class="swatch" style="background-color:#{{color}};"
+          title="#{{color}}"></span>: {{getColorSum(stripeParams.stripes, color)}}
+      </div>
+      <div class="total">Total Rows: {{getColorSum(stripeParams.stripes)}}</div>
     </div>
 
     <script src="http://code.angularjs.org/1.2.6/angular.js" type="text/javascript"></script>
